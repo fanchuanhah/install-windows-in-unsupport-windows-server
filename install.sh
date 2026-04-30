@@ -96,24 +96,32 @@ select_disk() {
 select_windows_image() {
     echo ""
     echo "可选 Windows 镜像："
-    echo "  1) Windows 2008 R2"
-    echo "  2) Windows 2012 R2"
-    echo "  3) Windows 2016"
-    echo "  4) Windows 2019"
-    echo "  5) Windows 2022"
-    echo "  6) Windows 10"
-    read -p "请选择要安装的系统 [1-6]：" WIN_CHOICE
-    if [[ ! "$WIN_CHOICE" =~ ^[1-6]$ ]]; then
+    echo "  1) Windows 2003"
+    echo "  2) Windows 2008 R2"
+    echo "  3) Windows 2012 R2"
+    echo "  4) Windows 2016"
+    echo "  5) Windows 2019"
+    echo "  6) Windows 2022"
+    echo "  7) Windows 2025"
+    echo "  8) Windows 7"
+    echo "  9) Windows 10"
+    echo "  10) Windows 11"
+    read -p "请选择要安装的系统 [1-10]：" WIN_CHOICE
+    if [[ ! "$WIN_CHOICE" =~ ^[1-9]|10$ ]]; then
         print_error "无效选择"
         exit 1
     fi
     case $WIN_CHOICE in
-        1) IMAGE_FILE="Windows-2008R2-Datacenter-cn.qcow2"; IMAGE_NAME="2008 R2" ;;
-        2) IMAGE_FILE="Windows-2012R2-Datacenter-cn.qcow2"; IMAGE_NAME="2012 R2" ;;
-        3) IMAGE_FILE="Windows-2016-Datacenter-cn.qcow2"; IMAGE_NAME="2016" ;;
-        4) IMAGE_FILE="Windows-2019-Datacenter-cn.qcow2"; IMAGE_NAME="2019" ;;
-        5) IMAGE_FILE="Windows-2022-Datacenter-cn.qcow2"; IMAGE_NAME="2022" ;;
-        6) IMAGE_FILE="Windows10-cn.qcow2"; IMAGE_NAME="10" ;;
+        1) IMAGE_FILE="Windows-2003-Enterprise-cn.qcow2"; IMAGE_NAME="2003" ;;
+        2) IMAGE_FILE="Windows-2008R2-Datacenter-cn.qcow2"; IMAGE_NAME="2008 R2" ;;
+        3) IMAGE_FILE="Windows-2012R2-Datacenter-cn.qcow2"; IMAGE_NAME="2012 R2" ;;
+        4) IMAGE_FILE="Windows-2016-Datacenter-cn.qcow2"; IMAGE_NAME="2016" ;;
+        5) IMAGE_FILE="Windows-2019-Datacenter-cn.qcow2"; IMAGE_NAME="2019" ;;
+        6) IMAGE_FILE="Windows-2022-Datacenter-cn.qcow2"; IMAGE_NAME="2022" ;;
+        7) IMAGE_FILE="Windows-2025-Datacenter-cn.qcow2"; IMAGE_NAME="2025" ;;
+        8) IMAGE_FILE="Windows7_enterprise-cn.qcow2"; IMAGE_NAME="7" ;;
+        9) IMAGE_FILE="Windows10-cn.qcow2"; IMAGE_NAME="10" ;;
+        10) IMAGE_FILE="Windows11-cn.qcow2"; IMAGE_NAME="11" ;;
     esac
     print_info "已选择: Windows $IMAGE_NAME, 镜像文件: $IMAGE_FILE"
 }
