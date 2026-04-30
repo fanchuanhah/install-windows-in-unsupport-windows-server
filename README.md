@@ -1,4 +1,4 @@
-# 智简魔方创建的不支持安装windows的云服务器一键安装 Windows 脚本
+# 智j魔f创建的不支持安装windows的云服务器一键安装 Windows 脚本
 
 > 📖 **详细教程**：[博客文章](https://blo.802213.xyz/posts/default/win-in-server)
 
