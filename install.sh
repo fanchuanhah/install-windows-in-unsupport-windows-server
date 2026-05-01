@@ -102,11 +102,10 @@ select_windows_image() {
     echo "  4) Windows 2016"
     echo "  5) Windows 2019"
     echo "  6) Windows 2022"
-    echo "  7) Windows 2025"
     echo "  8) Windows 7"
     echo "  9) Windows 10"
-    echo "  10) Windows 11"
-    read -p "请选择要安装的系统 [1-10]：" WIN_CHOICE
+    echo "  10) Windows 11(10gb镜像下不完，别选）"
+    read -p "请选择要安装的系统 （需要2025或者win11的先选老的再自己手动升级）[1-10]：" WIN_CHOICE
     if [[ ! "$WIN_CHOICE" =~ ^[1-9]|10$ ]]; then
         print_error "无效选择"
         exit 1
@@ -118,7 +117,7 @@ select_windows_image() {
         4) IMAGE_FILE="Windows-2016-Datacenter-cn.qcow2"; IMAGE_NAME="2016" ;;
         5) IMAGE_FILE="Windows-2019-Datacenter-cn.qcow2"; IMAGE_NAME="2019" ;;
         6) IMAGE_FILE="Windows-2022-Datacenter-cn.qcow2"; IMAGE_NAME="2022" ;;
-        7) IMAGE_FILE="Windows-2025-Datacenter-cn.qcow2"; IMAGE_NAME="2025" ;;
+        
         8) IMAGE_FILE="Windows7_enterprise-cn.qcow2"; IMAGE_NAME="7" ;;
         9) IMAGE_FILE="Windows10-cn.qcow2"; IMAGE_NAME="10" ;;
         10) IMAGE_FILE="Windows11-cn.qcow2"; IMAGE_NAME="11" ;;
@@ -479,17 +478,8 @@ reboot_hint() {
     echo -e "${GREEN}✓${NC} 安装磁盘：${TARGET_DISK}"
     echo -e "${GREEN}✓${NC} 管理员密码：${YELLOW}（已清空，无需密码）${NC}"
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-    echo ""
-    read -p "是否立即重启系统？[y/N]: " reboot_choice
-    if [[ "$reboot_choice" == "y" ]] || [[ "$reboot_choice" == "Y" ]]; then
-        print_info "系统将在 3 秒后重启..."
-        sleep 3
-        reboot
-    else
-        print_info "请记得手动重启系统以进入 Windows"
-        print_info "重启命令: reboot"
-    fi
-}
+    echo "请退出救援模式"
+    
 
 # ==================== 主函数 ====================
 main() {
