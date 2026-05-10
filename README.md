@@ -1,4 +1,4 @@
-# 智j魔f创建的不支持安装windows的云服务器一键安装 Windows 脚本
+# 智j魔f创建的不支持安装windows的云服务器dd后没网一键安装 Windows 脚本
 
 > 📖 **详细教程**：[博客文章](https://blo.802213.xyz/posts/default/win-in-server)
 
@@ -9,10 +9,10 @@
 > ⚠️ **免责声明**：本脚本仅供学习交流，数据会全部清除，后果自负。
 
 ### 要求
-- 智简魔方创建的 CentOS 8 / Stream 8
+- 用ddwindows安装后没网的，  请先尝试https://github.com/bin456789/reinstall 不行后再尝试此脚本
+- 智简魔方创建的云服务器
 - 救援模式可用
 - 服务器不提供 Windows 安装选项（有的话直接用官方的）
-- 网络能下载约 4GB 镜像
 
 ## 安装方法
 
@@ -30,7 +30,7 @@ bash <(curl -sL https://raw.githubusercontent.com/fanchuanhah/install-windows-in
 - 确认后等待自动完成（约 10-20 分钟）
 
 ### 4. 退出救援模式重启
-完成后退出救援模式，点击vnc。
+完成后退出救援模式，来到云服务器控制台，点击vnc。
 
 ### 5. 安装完了
 
